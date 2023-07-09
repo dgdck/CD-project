@@ -8,6 +8,8 @@ import main
 
 import pytest
 
+workdir = os.getcwd()
+
 
 def test_main(capsys):
     # Test on a short snippet first
@@ -21,9 +23,9 @@ def test_main(capsys):
     assert captured.err == "1"
 
     # Test filtering 'a'
-    text = open("random.txt", "r").read()
+    text = open(os.path.join(workdir, "stds","random.txt"), "r").read()
 
-    filtered_text = open("filtered_a.txt").read()
+    filtered_text = open(os.path.join(workdir, "stds","filtered_a.txt")).read()
     filtered_count = "342"
 
     sys.stdin = io.StringIO(text)
@@ -34,7 +36,7 @@ def test_main(capsys):
     assert captured.err == filtered_count
 
     # Test filtering '7'
-    filtered_text = open("filtered_7.txt").read()
+    filtered_text = open(os.path.join(workdir, "stds","filtered_7.txt")).read()
     filtered_count = "320"
 
     sys.stdin = io.StringIO(text)
