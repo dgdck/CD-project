@@ -12,8 +12,8 @@ In this assignment you will use GitHub Actions to implement a continuous deploym
 
 The continous deployment pipeline should look like this:
 
-* You manually write, commit and push some code. This only requires you to be familiar with git.
-* GitHub Actions runs tests on your code. You can use Pytest for this.
+* You manually write, commit and push some code. This only requires you to be familiar with git. <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Green_check.svg/240px-Green_check.svg.png" width="20">
+* GitHub Actions runs tests on your code. You can use Pytest for this.<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Green_check.svg/240px-Green_check.svg.png" width="20">
 
 If and only if the tests pass, GitHub Actions logs into the VPS you have running with Digital Ocean and runs commands such that the code is updated to the latest version.
 The only new part here is step 3, and we will let you think about how to best implement this. Here are some tips that you might find useful:
