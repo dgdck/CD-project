@@ -18,7 +18,7 @@ The continous deployment pipeline should look like this:
 If and only if the tests pass, GitHub Actions logs into the VPS you have running with Digital Ocean and runs commands such that the code is updated to the latest version.
 The only new part here is step 3, and we will let you think about how to best implement this. Here are some tips that you might find useful:
 
-* Tip 1: [GitHub: Deploy Keys](https://docs.github.com/en/free-pro-team@latest/developers/overview/managing-deploy-keys#deploy-keys/ "GitHub: Deploy Keys")
+* Tip 1: [GitHub: Deploy Keys](https://docs.github.com/en/free-pro-team@latest/developers/overview/managing-deploy-keys#deploy-keys/ "GitHub: Deploy Keys") <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Green_check.svg/240px-Green_check.svg.png" width="20">
 
 You can think of an SSH key as a username and password in one. You can use it to make reading and writing to repositories under your account on GitHub easier. A deploy key is an SSH key that grants access to just one repository. You can even set the key to only allow read-only access for extra security.
 
