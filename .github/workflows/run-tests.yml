@@ -18,16 +18,21 @@ jobs:
   deploy:
     needs: run-tests
     runs-on: ubuntu-20.04
+    name: Build
     steps:
-      - uses: actions/checkout@v3
-      - name: Copy repository contents via scp
-        uses: appleboy/scp-action@master
-        env:
-          HOST: ${{ secrets.HOST }}
-          USERNAME: ${{ secrets.USERNAME }}
-          PORT: ${{ secrets.PORT }}
-          KEY: ${{ secrets.SSHKEY }}
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: SSH Server Deploy
+        uses: kostya-ten/ssh-server-deploy@v4
         with:
-          source: "."
-          target: "/var/www/mywebsite"
+          host: ${{ secrets.HOST }}
+          port: ${{ secrets.PORT }}
+          username: ${{ secrets.USERNAME }}
+          private_key: ${{ secrets.SSHKEY }}
+          scp_source: README.md
+          scp_target: ~/var/www/mywebsite
+          before_script: |
+            df -h
+          after_script: |
+            whoami
   
