@@ -1,17 +1,17 @@
 name: Deploy
 
-on: push
+on: [push]
 
 jobs:
   build:
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v1
 
     - name: Copy repository contents via scp
-      uses: dgdck/CD-project@main
+      uses: appleboy/scp-action@master
       env:
         HOST: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
@@ -22,7 +22,7 @@ jobs:
         target: "/var/www/mywebsite"
 
     - name: Executing remote command
-      uses: dgdck/CD-project@main
+      uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
