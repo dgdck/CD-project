@@ -29,7 +29,6 @@ jobs:
           port: ${{ secrets.PORT }}
           username: ${{ secrets.USERNAME }}
           private_key: ${{ secrets.SSHKEY }}
-          scp_source: README.md
           scp_target: ~/var/www/mywebsite
           before_script: |
             df -h
