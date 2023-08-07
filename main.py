@@ -17,6 +17,10 @@ def cow():
 def sum4():
     return sum(2,2)
 
+@app.route('/test')
+def test():
+    return 'Test successfull'
+
 def sum(a,b):
     return a + b
 
