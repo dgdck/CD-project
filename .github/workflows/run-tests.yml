@@ -36,4 +36,5 @@ jobs:
          git pull git@github.com:dgdck/CD-project.git main
          cp /var/www/main.py /var/www/foo
          systemctl restart nginx
+         cd /var/www/foo
          systemctl restart gunicorn
