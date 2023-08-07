@@ -30,6 +30,4 @@ jobs:
         script: |
          cd /var/www/
          git init
-         git remote set-url origin git@github.com:dgdck/CD-project.git
-         git checkout
-         git pull origin main
+         git pull git@github.com:dgdck/CD-project.git main
