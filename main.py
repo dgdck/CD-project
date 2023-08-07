@@ -1,5 +1,3 @@
-# Main file to be working on
-
 # Import what we need from flask
 from flask import Flask
 
