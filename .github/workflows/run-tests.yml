@@ -30,5 +30,7 @@ jobs:
         script: |
          cd /var/www/
          git init
+         eval "$(ssh-agent -s)"
+         ssh-add ~/.ssh/winc
          ssh -T git@github.com
          git pull git@github.com:dgdck/CD-project.git main
