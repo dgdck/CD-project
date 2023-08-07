@@ -14,6 +14,9 @@ def cow():
     return 'MOoooOo!'
 
 @app.route('/sum')
+def sum4():
+    return sum(2,2)
+
 def sum(a,b):
     return a + b
 
