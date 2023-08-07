@@ -34,7 +34,7 @@ jobs:
         port: ${{ secrets.PORT }}
         key: ${{ secrets.SSHKEY }}
         source: "deploy.tar"
-        target: "var/www/repo"
+        target: "var/www"
  
     - name: Executing remote command
       uses: appleboy/ssh-action@master
@@ -43,4 +43,4 @@ jobs:
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
         key: ${{ secrets.SSHKEY }}
-        script: ls /var/www/repo
+        script: ls /var/www
