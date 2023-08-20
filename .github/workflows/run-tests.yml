@@ -28,13 +28,12 @@ jobs:
         port: ${{ secrets.PORT }}
         key: ${{ secrets.SSHKEY }}
         script: |
-         cd /var/www/
+         cd /home/farm/
          git init
          eval "$(ssh-agent -s)"
          ssh-add ~/.ssh/winc
          ssh -T git@github.com
          git pull git@github.com:dgdck/CD-project.git main
-         cp /var/www/main.py /var/www/foo
+         cp /home/farm/main.py /home/farm-site
          systemctl restart nginx
-         cd /var/www/foo
-         systemctl restart gunicorn
+         systemctl restart farm
