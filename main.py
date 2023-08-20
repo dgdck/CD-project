@@ -5,18 +5,20 @@ from flask import Flask
 app = Flask(__name__)
 
 # Assign a function to be called when the path `/` is requested
-@app.route('/')
-def index():
-    return 'Hello, world!'
+def main():
+    @app.route('/')
+    def index():
+        return 'Hello, world!'
 
-@app.route('/cow')
-def cow():
-    return 'MOoooOo!'
+    @app.route('/cow')
+    def cow():
+        return 'MOoooOo!'
 
 @app.route('/test')
 def test():
     return 'Test successfull'
 
-def sum(a,b):
-    return a + b
+    def sum(a,b):
+        return a + b
+
     
