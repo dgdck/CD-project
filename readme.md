@@ -21,4 +21,4 @@ In progress.
 
 
 ### Result
-[![Test and deploy](https://github.com/dgdck/CD-project/actions/workflows/run-tests.yml/badge.svg)](https://github.com/dgdck/CD-project/actions/workflows/run-tests.yml)
+[![Test and deploy](https://github.com/dgdck/CD-project/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/dgdck/CD-project/actions/workflows/run-tests.yml)
